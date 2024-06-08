@@ -5,10 +5,10 @@ pipeline {
   }
   stages {
     stage('build') {
-      steps{
-       options {
+      options {
          timeout(time: 10, unit: 'SECONDS')
        }
+      steps{
        retry(5){
        echo "Build done"
        sleep 5
