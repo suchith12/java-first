@@ -14,7 +14,9 @@ pipeline {
       }
     }
     stage ('deploy to dev') {
+      steps {
       echo " deployed to dev"
+      }
     }
     stage ('deploy to test') {
       steps{
@@ -27,8 +29,8 @@ pipeline {
     }
     stage ('deploy to stage') {
       steps{
-        when {
-          BRANCH_NAME==~/(hotfix|stage)/
+        expression {
+          BRANCH_NAME ==~ /(hotfix|stage)/
         }
         echo " deployed to stage"
       }
