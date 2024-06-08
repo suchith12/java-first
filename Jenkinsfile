@@ -28,7 +28,7 @@ pipeline {
     stage ('deploy to stage') {
       steps{
         when {
-          BRANCH_NAME==~/(hotfix/stage)/
+          BRANCH_NAME==~/(hotfix|stage)/
         }
         echo " deployed to stage"
       }
