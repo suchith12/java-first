@@ -21,10 +21,10 @@ pipeline {
       }
     }
     stage ('deploy to test') {
-      steps{
       when {
         equals expected:'Stage',actual: "${DEPLOY_TO}"
       }
+      steps{
        echo " deploying to test env"
       }
       
